@@ -34,6 +34,7 @@ graph TD
     C --> D[Оценка метрик]
     D --> E[Сохранение результатов]
     E --> F[Выгрузка в хранилище]
+```
 
 ---
 
@@ -196,5 +197,7 @@ graph TD
 
 Автор — Olga Poletkina  
 Email: olga.poletkina@gmail.com
+
+
 
 
