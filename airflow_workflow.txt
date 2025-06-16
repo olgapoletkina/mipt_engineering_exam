@@ -1,0 +1,56 @@
+# activate project
+wsl
+cd ~/engineering_exam
+source .venv/bin/activate
+export AIRFLOW_HOME=~/engineering_exam/airflow_home
+
+# copy files from windows
+mkdir -p ~/engineering_exam
+cp -r /mnt/c/Users/olgap/OneDrive/MIPT_Master/Engineering_exam/* ~/engineering_exam/
+ls ~/engineering_exam
+
+# set environment
+cd ~/engineering_exam
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# airflow home
+export AIRFLOW_HOME=~/engineering_exam/airflow_home
+
+# init db
+airflow db migrate
+
+# airflow user
+airflow users create \
+    --username admin \
+    --firstname Olga \
+    --lastname P \
+    --role Admin \
+    --email olga.poletkina@gmail.com \
+    --password admin
+
+# run web terminal 1
+cd ~/engineering_exam
+source .venv/bin/activate
+export AIRFLOW_HOME=~/engineering_exam/airflow_home
+airflow webserver
+
+# run scheduler terminal 2
+cd ~/engineering_exam
+source .venv/bin/activate
+export AIRFLOW_HOME=~/engineering_exam/airflow_home
+airflow scheduler
+
+# execute .sh files
+chmod +x ~/engineering_exam/airflow_start.sh
+
+./airflow_start.sh
+
+# stop airflow
+
+pkill -f airflow
+
+# copy results to my windors results folder 
+cp ~/engineering_exam/results/* /mnt/c/Users/olgap/OneDrive/MIPT_Master/Engineering_exam/results/
