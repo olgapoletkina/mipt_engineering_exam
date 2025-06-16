@@ -96,8 +96,17 @@ graph TD
 4. Запуск Airflow
 
     ```bash
-    nohup airflow webserver > ~/engineering_exam/webserver.log 2>&1 &
-    nohup airflow scheduler > ~/engineering_exam/scheduler.log 2>&1 &
+    cd ~/engineering_exam
+    source .venv/bin/activate
+    export AIRFLOW_HOME=~/engineering_exam/airflow_home
+    airflow webserver
+    ```
+    
+    ```bash
+    cd ~/engineering_exam
+    source .venv/bin/activate
+    export AIRFLOW_HOME=~/engineering_exam/airflow_home
+    airflow scheduler
     ```
 
 5. Открыть UI Airflow  
