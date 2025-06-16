@@ -187,9 +187,9 @@ graph TD
 
 ## Скриншоты
 
-![Airflow Screenshot 1](airflow_001.png)
-![Airflow Screenshot 2](airflow_002.png)
-![Airflow Screenshot 3](airflow_003.png)
+![Airflow Screenshot 1](imgs/airflow_001.png)
+![Airflow Screenshot 2](imgs/airflow_002.png)
+![Airflow Screenshot 3](imgs/airflow_003.png)
 
 ---
 
